@@ -1,0 +1,43 @@
+name: Tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.platform }}
+    strategy:
+      matrix:
+
+        platform:
+          - ubuntu-latest 
+        python-version: [3.9, '3.10']
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade setuptools pip wheel
+        # Use the latest published version for myself :)
+        python -m pip install tox-gh-actions pipenv
+        # criar ambiente virtual
+        pipenv shell
+
+    - name: Test with tox
+      run: tox
+    - name: Upload coverage.xml
+      if: ${{ matrix.platform == 'ubuntu-latest' && matrix.python-version == '3.9' }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: tox-gh-actions-coverage
+        path: coverage.xml
+        if-no-files-found: error
+    - name: Upload coverage.xml to codecov
+      if: ${{ matrix.platform == 'ubuntu-latest' && matrix.python-version == '3.9' }}
+      uses: codecov/codecov-action@v1

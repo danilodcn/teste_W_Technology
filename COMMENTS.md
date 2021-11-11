@@ -34,26 +34,36 @@ Agora já poderíamos partir para criação dos modelos, mas para melhor gerenci
 ## Configurando o ambiente de testes
 ### Configurando o tox
 inicialmente precisamos instalar o tox, e depois criar o arquivo de configuração ```tox.ini``` e ```setup.py``` na raiz do projeto. Para a instalação usaremos o comando:
+
 ```
 pipenv install tox -d
 ```
+
 A flag ```-d``` foi usada para declarar o pacote como dependência de desenvolvimento.
 
 Depois do ambiente configurado, basta rodar ```tox``` no terminal, e todos os testes serão executados.
 
 ### Criar a configurar o repositório no GITHUB
 
-Inicialmente temos que criar o repositório local usando o comando: 
+Inicialmente temos que criar o repositório local usando o comando:
+
 ```
 git init
 ```
 
 Em seguida, adicionamos um arquivo ```.gitignore```. Dentre várias opções, usaremos o site [gitignore.io](https://gitignore.io). Agora podemos criar um repositório remoto no github. logo em seguida, podemos linkar o nosso repositório local com o remoto usando o comando:
+
 ```
 git remote add origin https://github.com/danilodcn/teste_W_Technology.git
 ```
+
 Para finalizar essa primeira parte vamos fazer o primeiro commit. Para isso, vamos juntar todos os arquivos criados até aqui em um único commit. E em seguida subir para o servidor:
+
 ```
-git add .
-git commit -m "criação do projeto + configuração do tox"
+$ git add .
+$ git commit -m "criação do projeto + configuração do tox"
+$ git push
 ```
+### Configurando o git actions
+
+Agora temos que configurar o git actions para realização dos testes sempre que subirmos o código. 
