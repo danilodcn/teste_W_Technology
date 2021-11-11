@@ -13,7 +13,7 @@ jobs:
 
         platform:
           - ubuntu-latest 
-        python-version: [3.9, '3.10']
+        python-version: [3.9]
 
     steps:
     - uses: actions/checkout@v1
@@ -36,8 +36,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: tox-gh-actions-coverage
-        path: coverage.xml
+        path: htmlconv
+
         if-no-files-found: error
-    - name: Upload coverage.xml to codecov
-      if: ${{ matrix.platform == 'ubuntu-latest' && matrix.python-version == '3.9' }}
-      uses: codecov/codecov-action@v1
