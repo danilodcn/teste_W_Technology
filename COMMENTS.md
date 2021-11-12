@@ -76,3 +76,42 @@ $ git push
 Agora temos que configurar o git actions para realização dos testes sempre que subirmos o código.
 
 obs: nao sei explicar o motivo, mas os testes falham no github actions. Da um erro no report do coverage. Vou tentar remover algumas linhas da configuração e ver se o teste passa.
+Ainda nao passou!!! O erro é o seguinte:
+
+```
+ No data to report.
+  ERROR: InvocationError for command /home/runner/work/teste_W_Technology/teste_W_Technology/.tox/stats/bin/coverage report (exited with code 1)
+```
+
+Ao finalizar o projeto eu volto nessa tema e tento novamente.
+
+## Configuração do Postgres usando Docker
+
+Existem várias maneiras de subir o serviço do Postgres por meio do docker. Uma delas é usando docker compose. Essa ferramenta usa um arquivo de configuração com extensão `.yaml`. Essa ferramenta facilita a orquestração de múltiplos containers. Poderíamos apenas rodar um simples `docker run` no terminal, mas como precisamos passar várias variáveis de ambiente, é mais simples usar o docker compose.
+
+Depois do arquivo de configuração criado, podemos rodar o seguinte comando:
+
+```
+docker-compose up -d
+```
+
+Usando a flag -d, o docker sobe o container em background.
+
+No arquivo de configuração criamos três variáveis de ambiente que serão usadas na configuração do banco no arquivo `settings.py` do django. São elas: POSTGRES_PASSWORD, POSTGRES_DB e POSTGRES_USER.
+
+
+## configurando o Banco de Dados do django
+
+Inicialmente vamos configurar o django para usar banco de dados Postgres, cuja configuração foi apresentada na seção anterior. Para isso vamos criar um arquivo `.env` na raiz do projeto. Nesse arquivo vamos adicionar todas as variáveis de ambiente necessárias. Já vamos aproveitar e criar uma variável de ambiente para a `SECRET_KEY`. Para carregar as variáveis de ambiente, vamos usar o módulo `python-dotenv`.
+
+Para instalar o pacote `python-dotenv` usamos o comando:
+
+```
+pipenv install python-dotenv
+```
+
+## Criação dos modelos no Banco de Dados
+
+Todos os modelos serão criados na app core, para que facilite as posteriores mudanças na aplicação.
+
+

@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 django = "*"
 django-coverage-plugin = "*"
+python-dotenv = "*"
+psycopg2 = "*"
 
 [dev-packages]
 tox = "*"
