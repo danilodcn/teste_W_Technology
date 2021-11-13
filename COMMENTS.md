@@ -145,4 +145,8 @@ Nessa aplicação será usado o django rest framework para facilitar a criação
 $ pipenv install djangorestframework
 ```
 
-Para usá-lo temos que adionar o app `'rest_framework'` a lista `INSTALLED_APPS` do arquivo `settings.py`. Agora temos que criar os serializers, que são classes do django rest framework para que serializam os dados do banco de dados. Ou seja, essas classes são responsáveis em converter o objetos da classe `Model` em objetos `JSON`.
+Para usá-lo temos que adicionar o app `'rest_framework'` a lista `INSTALLED_APPS` do arquivo `settings.py`. Agora temos que criar os serializers, que são classes do django rest framework para que serializam os dados do banco de dados. Ou seja, essas classes são responsáveis em converter o objetos da classe `Model` em objetos `JSON`.
+
+Foram criados 4 serializers, um para cada classe criada no arquivo `models.py`.
+
+Agora, no arquivo `views.py`, vamos criar as views da API. Para isso vamos usar a classe ModelViewSet, disponível no pacote django rest framework.
