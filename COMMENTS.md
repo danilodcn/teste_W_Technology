@@ -121,3 +121,17 @@ $ python manage.py makemigrations
 $ python manage.py migrate 
 ```
 
+## Usando o Django Admin
+
+Para gerenciar nossa aplicação de maneira fácil e simples podemos usar o django admin. Esse aplicativo de administração do django pode usar os modelos criados para criar automaticamente uma área para criar, atualizar, visualizar, editar e excluir registros no banco de dados. Ele também será usado para gerenciar os usuário da aplicação.
+
+Por padrão o django expõe essa aplicação na rota `/admin`, mas é possível alterá-la no arquivo `admin.py`  
+
+Para criar o usuário e senha de administração podemos usar o comando:
+
+```
+$ python manage.py createsuperuser
+```
+
+Ao fazer login podemos ver toda o ambiente administrativo do django. Agora temos que adicionar os modelos no arquivo `core/admin.py`. Isso é feito usando a função `admin.site.register`. O argumento dessa função deve ser uma lista contendo as classes de modelos criados.
+
