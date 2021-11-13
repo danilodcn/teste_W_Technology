@@ -112,6 +112,12 @@ pipenv install python-dotenv
 
 ## Criação dos modelos no Banco de Dados
 
-Todos os modelos serão criados na app core, para que facilite as posteriores mudanças na aplicação.
+Todos os modelos serão criados na app core, para que facilite as posteriores mudanças na aplicação. Esses modelos serão criados no arquivo `models.py` do app core.
 
+Para aplicar as mudanças no banco de dados temos adicionar a app `core` na lista `INSTALLED_APPS` no arquivo `settings.py` e depois que realizar as migrações usando os comandos:
+
+```
+$ python manage.py makemigrations
+$ python manage.py migrate 
+```
 
