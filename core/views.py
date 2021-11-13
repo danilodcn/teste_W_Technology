@@ -1,16 +1,19 @@
-from rest_framework import viewsets
-from rest_framework import permissions
+from rest_framework import permissions, viewsets
 
-import serializers
-import models
+from .models import Cliente, Empresa, Lance, Oferta
+
+from .serializers import (
+    ClientSerializer, EmpresaSerializer,
+    LanceSerializer, OfertaSerializer
+)
 
 
 class ClientViewSet(viewsets.ModelViewSet):
     """
     Endpoint usado para gerenciar o model Client
     """
-    queryset = models.Cliente.objects.all()
-    serializer_class = serializers.ClientSerializer
+    queryset = Cliente.objects.all()
+    serializer_class = ClientSerializer
     permission_class = [permissions.IsAuthenticated]
 
 
@@ -18,8 +21,8 @@ class EmpresaViewSet(viewsets.ModelViewSet):
     """
     Endpoint usado para gerenciar o model Empresa
     """
-    queryset = models.Empresa.objects.all()
-    serializer_class = serializers.EmpresaSerializer
+    queryset = Empresa.objects.all()
+    serializer_class = EmpresaSerializer
     permission_class = [permissions.IsAuthenticated]
 
 
@@ -27,8 +30,8 @@ class OfertaViewSet(viewsets.ModelViewSet):
     """
     Endpoint usado para gerenciar o model Oferta
     """
-    queryset = models.Oferta.objects.all()
-    serializer_class = serializers.OfertaSerializer
+    queryset = Oferta.objects.all()
+    serializer_class = OfertaSerializer
     permission_class = [permissions.IsAuthenticated]
 
 
@@ -36,6 +39,6 @@ class LanceViewSet(viewsets.ModelViewSet):
     """
     Endpoint usado para gerenciar o model Lance
     """
-    queryset = models.Lance.objects.all()
-    serializer_class = serializers.LanceSerializer
+    queryset = Lance.objects.all()
+    serializer_class = LanceSerializer
     permission_class = [permissions.IsAuthenticated]
