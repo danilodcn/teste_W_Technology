@@ -9,6 +9,9 @@ django-coverage-plugin = "*"
 python-dotenv = "*"
 psycopg2 = "*"
 djangorestframework = "*"
+django-oauth-toolkit = "*"
+requests = "*"
+drf-yasg = "*"
 
 [dev-packages]
 tox = "*"

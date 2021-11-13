@@ -10,6 +10,8 @@ class UserBase(models.Model):
     active = models.BooleanField(default=False, blank=False, null=False)
     site = models.CharField(max_length=100)
 
+    def __str__(self) -> str:
+        return self.name
 
 class Empresa(UserBase):
     ...
@@ -38,6 +40,9 @@ class Oferta(models.Model):
         "Amount Type", max_length=10, blank=False, null=False
     )
 
+    def __str__(self) -> str:
+        return self.name
+
 
 class Lance(models.Model):
     id_provider = models.ForeignKey(Cliente, on_delete=models.CASCADE)
@@ -50,3 +55,6 @@ class Lance(models.Model):
     amount = models.DecimalField(
         decimal_places=2, max_digits=20, blank=False, null=False
     )
+
+    def __str__(self) -> str:
+        return f"Lance (offer = {self.id_offer}, provider={self.id_provider})"

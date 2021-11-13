@@ -1,4 +1,7 @@
 from rest_framework import permissions, viewsets
+from oauth2_provider.contrib.rest_framework import (
+    TokenHasReadWriteScope, TokenHasScope
+)
 
 from .models import Cliente, Empresa, Lance, Oferta
 
@@ -14,7 +17,7 @@ class ClientViewSet(viewsets.ModelViewSet):
     """
     queryset = Cliente.objects.all()
     serializer_class = ClientSerializer
-    permission_class = [permissions.IsAuthenticated]
+    permission_class = [permissions.IsAuthenticated, TokenHasScope]
 
 
 class EmpresaViewSet(viewsets.ModelViewSet):

@@ -151,4 +151,5 @@ Foram criados 4 serializers, um para cada classe criada no arquivo `models.py`.
 
 Agora, no arquivo `views.py`, vamos criar as views da API. Para isso vamos usar a classe ModelViewSet, disponível no pacote django rest framework.
 
-Logo Depois temos que criar as rotas. Para isso vamos criar uma arquivo `routes.py` no app `core`. 
+Logo Depois temos que criar as rotas. Para isso vamos criar uma arquivo `routes.py` no app `core`.
+
