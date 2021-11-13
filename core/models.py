@@ -22,10 +22,10 @@ class Cliente(UserBase):
 class Oferta(models.Model):
     id_consumer = models.ForeignKey(Empresa, on_delete=models.CASCADE)
     from_field = models.CharField(
-        "from", db_column="from", null=False, blank=False
+        "from", db_column="from", max_length=30, null=False, blank=False
     )
 
-    to = models.CharField(null=False, blank=False)
+    to = models.CharField(null=False, max_length=30, blank=False)
 
     initial_value = models.DecimalField(
         decimal_places=2, max_digits=20, blank=False, null=False
@@ -35,7 +35,7 @@ class Oferta(models.Model):
         decimal_places=2, max_digits=20, blank=False, null=False
     )
     amount_type = models.CharField(
-        "Amount Type", blank=False, null=False
+        "Amount Type", max_length=10, blank=False, null=False
     )
 
 
