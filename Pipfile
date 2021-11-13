@@ -8,6 +8,7 @@ django = "*"
 django-coverage-plugin = "*"
 python-dotenv = "*"
 psycopg2 = "*"
+djangorestframework = "*"
 
 [dev-packages]
 tox = "*"

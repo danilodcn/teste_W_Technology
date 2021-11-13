@@ -135,3 +135,15 @@ $ python manage.py createsuperuser
 
 Ao fazer login podemos ver toda o ambiente administrativo do django. Agora temos que adicionar os modelos no arquivo `core/admin.py`. Isso é feito usando a função `admin.site.register`. O argumento dessa função deve ser uma lista contendo as classes de modelos criados.
 
+## Criação da API
+
+Até agora não havia necessidade de realização de testes já que os testes de modelos são feitos pelo django. Mas a partir de agora temos que garantir a qualidade do código.
+
+Nessa aplicação será usado o django rest framework para facilitar a criação da API. Inicialmente temos que instalá-lo usando o comando.
+
+ ```
+$ pipenv install djangorestframework
+```
+
+Para usá-lo temos que adionar o app `'rest_framework'` a lista `INSTALLED_APPS` do arquivo `settings.py`
+
