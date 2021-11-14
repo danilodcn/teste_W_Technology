@@ -153,3 +153,8 @@ Agora, no arquivo `views.py`, vamos criar as views da API. Para isso vamos usar 
 
 Logo Depois temos que criar as rotas. Para isso vamos criar uma arquivo `routes.py` no app `core`.
 
+## Criando a documentação da API
+
+Vamos criar duas páginas de documentação: swagger e redoc. Para isso podemos usar o pacote `drf-yasg`. A documentação oficial possui um gia simples de configuração que pode ser acessado usando [esse link](https://drf-yasg.readthedocs.io/en/stable/readme.html#quickstart).
+
+Realizadas todas as configurações podemos acessar a documentação da API nas rotas `/api/swagger` e `/api/redoc`.

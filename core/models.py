@@ -41,7 +41,7 @@ class Oferta(models.Model):
     )
 
     def __str__(self) -> str:
-        return self.name
+        return f"Oferta do {self.id_consumer.name}"
 
 
 class Lance(models.Model):
@@ -57,4 +57,4 @@ class Lance(models.Model):
     )
 
     def __str__(self) -> str:
-        return f"Lance (offer = {self.id_offer}, provider={self.id_provider})"
+        return f"Lance (offer={self.id_offer}, provider={self.id_provider})"
