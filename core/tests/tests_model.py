@@ -1,6 +1,7 @@
 from django.test import TestCase
 from core.models import Cliente, Empresa, Lance, Oferta
 
+
 class TestBasic(TestCase):
     def teste_converte_cliente_em_str_(self):
         nome = "Danilo Nascimento"
@@ -11,7 +12,7 @@ class TestBasic(TestCase):
             site="www.danilo.site"
         )
         # print("Dentro")
-        
+
         esperado = nome
         resultado = str(client)
 
@@ -26,7 +27,7 @@ class TestBasic(TestCase):
             site="www.google.com"
         )
         # print("Dentro")
-        
+
         esperado = nome
         resultado = str(client)
 
@@ -44,12 +45,12 @@ class TestBasic(TestCase):
         oferta = Oferta(
             id_consumer=empresa,
             from_field="Acailandia",
-            to = "Parauapebas",
+            to="Parauapebas",
             initial_value=50.09,
             amount=5568.43,
         )
         # print("Dentro")
-        
+
         esperado = f"Oferta do {nome}"
         resultado = str(oferta)
 
@@ -76,7 +77,7 @@ class TestBasic(TestCase):
         oferta = Oferta(
             id_consumer=empresa,
             from_field="Acailandia",
-            to = "Parauapebas",
+            to="Parauapebas",
             initial_value=50.09,
             amount=5568.43,
         )
@@ -84,11 +85,11 @@ class TestBasic(TestCase):
         lance = Lance(
             id_provider=client,
             id_offer=oferta,
-            value = 20.40,
-            amount = 60.87
+            value=20.40,
+            amount=60.87
         )
         # print("Dentro")
-        
+
         esperado = 'Lance (offer=Oferta do Google, provider=Danilo Nascimento)'
         resultado = str(lance)
 

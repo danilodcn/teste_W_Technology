@@ -1,7 +1,5 @@
 from rest_framework import permissions, viewsets
-from oauth2_provider.contrib.rest_framework import (
-    TokenHasReadWriteScope, TokenHasScope
-)
+from oauth2_provider.contrib.rest_framework import TokenHasScope
 
 from .models import Cliente, Empresa, Lance, Oferta
 

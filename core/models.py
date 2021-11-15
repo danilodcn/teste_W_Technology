@@ -13,6 +13,7 @@ class UserBase(models.Model):
     def __str__(self) -> str:
         return self.name
 
+
 class Empresa(UserBase):
     ...
 

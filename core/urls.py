@@ -44,4 +44,3 @@ core_routes.register('clientes', ClientViewSet)
 core_routes.register('empresas', EmpresaViewSet)
 core_routes.register('lances', LanceViewSet)
 core_routes.register('ofertas', OfertaViewSet)
-
