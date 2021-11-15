@@ -12,6 +12,7 @@ djangorestframework = "*"
 django-oauth-toolkit = "*"
 requests = "*"
 drf-yasg = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 tox = "*"

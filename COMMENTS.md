@@ -158,3 +158,17 @@ Logo Depois temos que criar as rotas. Para isso vamos criar uma arquivo `routes.
 Vamos criar duas páginas de documentação: swagger e redoc. Para isso podemos usar o pacote `drf-yasg`. A documentação oficial possui um gia simples de configuração que pode ser acessado usando [esse link](https://drf-yasg.readthedocs.io/en/stable/readme.html#quickstart).
 
 Realizadas todas as configurações podemos acessar a documentação da API nas rotas `/api/swagger` e `/api/redoc`.
+
+
+## Criação do frontend
+
+## Criação do projeto usando react e vite
+
+Vite é uma ferramenta de construção de projetos web usando tecnologias como react, vue, lit entre outras. O diferencial do uso dessa ferramenta é a velocidade como ela renderiza as páginas durante o desenvolvimento. Para configurar nosso ambiente podemos usar o guia que está disponível no [link](https://vitejs.dev/guide/#trying-vite-online).
+
+Depois de configurada, vamos limpar tudo o que vem pre carregado e começar o desenvolvimento. Para realizar requisições web vamos usar o [axios](https://axios-http.com/docs/api_intro).
+
+Para agilizar o desenvolvimento vamos usar o [react mui material](https://mui.com/).
+
+Para usar a API precisamos de autorização (TOKEN), precisamos criar um sistema básico de login. Para isso vamos criar um componente.
+
