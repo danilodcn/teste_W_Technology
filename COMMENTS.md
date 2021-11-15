@@ -3,9 +3,9 @@
 O projeto consistem em criar um API Rest para cadastrar e obter informações de empresas, ofertas e lances.
 Os dados foram armazenados em um banco de dados Postgres, para isso foi usado a ferramenta docker. Para a construção do projeto será usado Django bem como Django Rest Framework.
 
-Todo o projeto foi realizado usado Test Driven Development (TDD), bem como ferramentas de linter como pylava. Assim o código final fica mais limpo e com melhor manutenção.
+Durante o projeto serão usadas ferramentas de linter como o pylava. Também serão criados testes automatizados. Assim o código final fica mais limpo e com melhor manutenção.
 
-Para automatizar o processo de testes será usado o [tox](https://tox.wiki/en/latest/index.html). Também será usado github actions para realização dos testes após cada push para o servidor do github. Será usado o [coverage]() para proporcionar um feedback visual do código testado e não testado.
+Para automatizar o processo de testes será usado o [tox](https://tox.wiki/en/latest/index.html). Também será usado github actions para realização dos testes após cada push para o servidor do github. Será usado o [coverage](https://coverage.readthedocs.io/) para proporcionar um feedback visual do código testado e não testado.
 
 ## Criação do projeto
 
@@ -170,5 +170,10 @@ Depois de configurada, vamos limpar tudo o que vem pre carregado e começar o de
 
 Para agilizar o desenvolvimento vamos usar o [react mui material](https://mui.com/).
 
-Para usar a API precisamos de autorização (TOKEN), precisamos criar um sistema básico de login. Para isso vamos criar um componente.
+Para usar a API precisamos de autorização (TOKEN), precisamos criar um sistema básico de login. Para isso vamos criar um componente react.
 
+## Finalização e entrega
+
+Várias partes do projeto ainda não foram realizadas. Eu não tenho muito conhecimento em react, por isso o tempo de desenvolvimento de aplicações react tente a demorar um pouco mais. Para finalizar esse projeto, poderia ser aplicado context API do react. Assim todos os componentes teriam acesso aos dados do usuário cadastrado.
+
+A API também tem muito a melhorar. por exemplo: cada usuário logado deveria possuir privilégios para editar apenas o seu usuário. Para isso, em vez de criar doi models (Cliente e Empresa), poderia ser criado apenas uma: User. Nesse modelo seria criado um campo para identificar o tipo de usuário. Essa abordagem é de mais fácil compreensão, pois diminui o número de tabelas no banco.
